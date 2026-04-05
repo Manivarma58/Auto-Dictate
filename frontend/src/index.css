@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #22d3ee;
+  --secondary: #0f172a;
+  --accent: #22d3ee;
+  --midnight: #020617;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--midnight);
+  color: #f8fafc;
+  overflow-x: hidden;
+}
+
+@layer utilities {
+  .glass-container {
+    @apply bg-slate-900/40 backdrop-blur-3xl border border-slate-800 shadow-[0_32px_128px_-16px_rgba(0,0,0,0.5)];
+  }
+}
+
+.glass-title {
+  @apply text-white font-black tracking-tighter drop-shadow-lg;
+}
+
+/* 
+  Midnight Obsidian Background (Dark & Tech)
+*/
+.bg-midnight {
+  background: radial-gradient(circle at top right, rgba(34, 211, 238, 0.05) 0%, transparent 40%),
+              radial-gradient(circle at bottom left, rgba(34, 211, 238, 0.03) 0%, transparent 40%),
+              var(--midnight);
+}
+
+.btn-primary {
+  @apply px-10 py-4 bg-primary text-slate-950 rounded-2xl font-black transition-all transform hover:scale-105 active:scale-95 shadow-[0_10px_40px_-5px_rgba(34,211,238,0.4)] hover:shadow-primary/60;
+}
+
+.btn-secondary {
+  @apply px-10 py-4 bg-gray-100 text-gray-900 rounded-2xl font-black transition-all transform hover:scale-105 active:scale-95 border border-gray-200 hover:bg-gray-200;
+}
+
+/* 
+  Frosted Sidebar Inputs 
+*/
+input[type="text"] {
+  @apply bg-slate-900/60 border border-slate-800 text-white p-5 rounded-2xl outline-none focus:border-primary transition-all placeholder-slate-500;
+}
